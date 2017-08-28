@@ -1,7 +1,7 @@
 
 
 def inc(val):
-    return val + 1
+    return val + 2
 
 
 def test_inc1():
