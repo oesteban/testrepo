@@ -1,8 +1,7 @@
 
 
 def inc(val):
-    return val + 2
-
+    return val + 1
 
 def test_inc1():
     assert inc(4) == 5
