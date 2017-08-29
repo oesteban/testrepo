@@ -5,15 +5,14 @@
 version: 2
 jobs:
   build:
+    filters:
+      tags:
+        ignore: /^test-*/
+
     docker:
       - image: docker:17.05.0-ce-git
 
     working_directory: ~/repo
-
-    branches:
-      ignore:
-        - develop
-
     steps:
       - checkout
 
