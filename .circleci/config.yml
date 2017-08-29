@@ -13,12 +13,6 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "requirements.txt" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
 
       - setup_remote_docker
 
@@ -26,11 +20,6 @@ jobs:
           name: Docker build
           command: docker build -t oesteban/test_inc:latest .
 
-      - save_cache:
-          paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
-        
       # run tests!
       - run:
           name: Run test
